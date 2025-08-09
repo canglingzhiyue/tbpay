@@ -1,0 +1,2267 @@
+{
+  "api": "mtop.trade.order.adjust",
+  "data": {
+    "container": {
+      "data": [{
+        "name": "buy_v2_action_bar",
+        "containerType": "dinamicx",
+        "version": "46",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_action_bar/1736318635594/buy_v2_action_bar.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_action_bar$0$generalv2"]
+      }, {
+        "name": "buy_v2_address",
+        "containerType": "dinamicx",
+        "version": "84",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_address/1742874003996/buy_v2_address.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_address$0$generalv2"]
+      }, {
+        "name": "buy_v2_address_sticky",
+        "containerType": "dinamicx",
+        "version": "8",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_address_sticky/1718592958637/buy_v2_address_sticky.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_address_sticky$0$generalv2"]
+      }, {
+        "name": "buy_v2_common_column_with_action",
+        "containerType": "dinamicx",
+        "version": "17",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_common_column_with_action/1718605701889/buy_v2_common_column_with_action.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_common_column_with_action$0$generalv2"]
+      }, {
+        "name": "buy_v2_common_sliderlayout",
+        "containerType": "dinamicx",
+        "version": "3",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_common_sliderlayout/1732093045572/buy_v2_common_sliderlayout.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_common_sliderlayout$0$generalv2"]
+      }, {
+        "name": "buy_v2_common_title",
+        "containerType": "dinamicx",
+        "version": "34",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_common_title/1745393910791/buy_v2_common_title.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_common_title$0$generalv2"]
+      }, {
+        "name": "buy_v2_foot_elevator",
+        "containerType": "dinamicx",
+        "version": "22",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_foot_elevator/1750143226442/buy_v2_foot_elevator.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_foot_elevator$0$generalv2"]
+      }, {
+        "name": "buy_v2_group_items_selection",
+        "containerType": "dinamicx",
+        "version": "100",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_group_items_selection/1745290405589/buy_v2_group_items_selection.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_group_items_selection$0$generalv2"]
+      }, {
+        "name": "buy_v2_item",
+        "containerType": "dinamicx",
+        "version": "110",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_item/1749179786914/buy_v2_item.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_item$0$generalv2"]
+      }, {
+        "name": "buy_v2_item_ext",
+        "containerType": "dinamicx",
+        "version": "97",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_item_ext/1749463216962/buy_v2_item_ext.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_item_ext$0$generalv2"]
+      }, {
+        "name": "buy_v2_item_sale_agreement",
+        "containerType": "dinamicx",
+        "version": "17",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_item_sale_agreement/1718591126498/buy_v2_item_sale_agreement.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_item_sale_agreement$0$generalv2"]
+      }, {
+        "name": "buy_v2_item_tie_sale_2024",
+        "containerType": "dinamicx",
+        "version": "50",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_item_tie_sale_2024/1739947982007/buy_v2_item_tie_sale_2024.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_item_tie_sale_2024$0$generalv2"]
+      }, {
+        "name": "buy_v2_order_remark",
+        "containerType": "dinamicx",
+        "version": "27",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_order_remark/1718779776611/buy_v2_order_remark.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_order_remark$0$generalv2"]
+      }, {
+        "name": "buy_v2_payment",
+        "containerType": "dinamicx",
+        "version": "71",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_payment/1752050637184/buy_v2_payment.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_payment$0$generalv2"]
+      }, {
+        "name": "buy_v2_pop_bottom",
+        "containerType": "dinamicx",
+        "version": "13",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_pop_bottom/1749125450429/buy_v2_pop_bottom.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_pop_bottom$0$generalv2"]
+      }, {
+        "name": "buy_v2_pop_error",
+        "containerType": "dinamicx",
+        "version": "19",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_pop_error/1718765334008/buy_v2_pop_error.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_pop_error$0$generalv2"]
+      }, {
+        "name": "buy_v2_pop_item",
+        "containerType": "dinamicx",
+        "version": "26",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_pop_item/1719902703360/buy_v2_pop_item.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_pop_item$0$generalv2"]
+      }, {
+        "name": "buy_v2_pop_title",
+        "containerType": "dinamicx",
+        "version": "14",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_pop_title/1718766927143/buy_v2_pop_title.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_pop_title$0$generalv2"]
+      }, {
+        "name": "buy_v2_separater",
+        "containerType": "dinamicx",
+        "version": "2",
+        "url": "https://ossgw.alicdn.com/rapid-oss-bucket/1648622952399/buy_v2_separater.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v2_separater$0$generalv2"]
+      }, {
+        "name": "buy_v3_group_items_selection",
+        "containerType": "dinamicx",
+        "version": "12",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v3_group_items_selection/1739241893492/buy_v3_group_items_selection.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v3_group_items_selection$0$generalv2"]
+      }, {
+        "name": "buy_v3_item_step",
+        "containerType": "dinamicx",
+        "version": "2",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v3_item_step/1739004120659/buy_v3_item_step.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v3_item_step$0$generalv2"]
+      }, {
+        "name": "buy_v3_pop_title",
+        "containerType": "dinamicx",
+        "version": "4",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v3_pop_title/1732244763514/buy_v3_pop_title.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v3_pop_title$0$generalv2"]
+      }, {
+        "name": "buy_v3_submit_order",
+        "containerType": "dinamicx",
+        "version": "25",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v3_submit_order/1752029094668/buy_v3_submit_order.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v3_submit_order$0$25"]
+      }, {
+        "name": "buy_v3_tmp",
+        "containerType": "dinamicx",
+        "version": "1",
+        "url": "https://dinamicx.alibabausercontent.com/pub/buy_v3_tmp/1736303938904/buy_v3_tmp.zip",
+        "md5": null,
+        "type": ["dinamicx$buy_v3_tmp$0$generalv2"]
+      }, {
+        "name": "card",
+        "containerType": "layout",
+        "version": "0",
+        "url": null,
+        "md5": null,
+        "type": ["layout$card$0$0"]
+      }, {
+        "name": "linear",
+        "containerType": "layout",
+        "version": "0",
+        "url": null,
+        "md5": null,
+        "type": ["layout$linear$0$0"]
+      }, {
+        "name": "popup_window",
+        "containerType": "layout",
+        "version": "0",
+        "url": null,
+        "md5": null,
+        "type": ["layout$popup_window$0$0"]
+      }, {
+        "name": "sticky",
+        "containerType": "layout",
+        "version": "0",
+        "url": null,
+        "md5": null,
+        "type": ["layout$sticky$0$0"]
+      }]
+    },
+    "data": {
+      "generalV2": {
+        "features": {
+          "linkage": {
+            "ref": "generalV2_generalV2",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "pageType": "GENERAL",
+                "umid": "",
+                "joinId": "2fa86a8fb69c7bf6ece7297057ccbb6f",
+                "exParams": "{\"OVERSEA_RED_ENVELOPE\":\"UMP\",\"tradeProtocolFeatures\":\"5\",\"enableCashierPlatform\":\"false\",\"tao_cashier_effect_type\":\"split_btn\",\"coVersion\":\"2.0\",\"isLargeScreen\":\"true\",\"payment_page_name\":\"buy2_3\",\"isAdjust4Buy2Elevator\":\"true\",\"V3TaxFix\":\"FIX\",\"hitTaoCoinOpenCard\":true,\"alipayFrontV2Checked\":\"true\",\"hitSubmitTaoPlaceOrderSpi\":\"0\",\"InsuranceServiceV2\":\"1\",\"currOperator\":\"paymentUsePrimaryAction_Agency4Newton\",\"umfVersions\":\"{\\\"features\\\":{},\\\"version\\\":\\\"0.1.0\\\"}\",\"ABTestGloableDataTrack\":[\"[{\\\"abtest\\\":\\\"398848_403021\\\",\\\"component\\\":\\\"helpBuyForAnother\\\",\\\"releaseId\\\":398848,\\\"module\\\":\\\"helpBuyForAnother\\\",\\\"cm\\\":\\\"helpBuyForAnother_helpBuyForAnother\\\",\\\"experimentId\\\":116451,\\\"bucketId\\\":403021,\\\"pageName\\\":[\\\"Page_ConfirmOrder\\\"],\\\"trackConfigs\\\":\\\"[{\\\\\\\"eventIds\\\\\\\":[2001,2101,2201],\\\\\\\"pageNames\\\\\\\":[\\\\\\\"Page_ConfirmOrder\\\\\\\"]}]\\\"}]\",\"[{\\\"abtest\\\":\\\"581306_183609\\\",\\\"component\\\":\\\"AB_alipay_front\\\",\\\"releaseId\\\":581306,\\\"module\\\":\\\"AB_alipay_front\\\",\\\"cm\\\":\\\"AB_alipay_front_AB_alipay_front\\\",\\\"experimentId\\\":55434,\\\"bucketId\\\":183609,\\\"pageName\\\":[\\\"Page_ConfirmOrder\\\"],\\\"trackConfigs\\\":\\\"[{\\\\\\\"eventIds\\\\\\\":[2001,2101,2201],\\\\\\\"pageNames\\\\\\\":[\\\\\\\"Page_ConfirmOrder\\\\\\\"]}]\\\"}]\"],\"crossShopBuy1AdjustQuery\":\"true\",\"v3PromotionGray\":\"true\",\"tao_cashier_split_btn_strategy\":\"insSm\",\"websiteLanguage\":\"zh_CN\",\"CfpMg\":\"gray\",\"privacyChecked\":\"true\",\"_F_agcPass\":\"1\",\"needSplitThreshold\":\"1\",\"2fa86a8fb69c7bf6ece7297057ccbb6f_renderPrice\":1090,\"promotionCompressInfo\":\"1|2285546724419|2|2207635043114|7||1@0@1<0=0|`paypromotion=2;cross_id_78=1;2fa86a8fb69c7bf6ece7297057ccbb6f=0\",\"singleItemFlag\":\"1\",\"MAKE_ORDER_V2_SELECT_GRAY_OPEN_2fa86a8fb69c7bf6ece7297057ccbb6f\":true,\"mcInstallment\":\"1\",\"ovspayrenderkey\":false,\"UMP_RED_TOTALFEE\":\"1090\",\"taoBuy3\":\"1\",\"tradeTemplates\":\"[]\",\"promotionCompressInfoBeyondItem\":\"nNULL\",\"lastXFQAV3\":\"0\",\"enableOnDemandDelivery\":\"1\",\"alipayCashierParams\":\"{\\\"extinfo\\\":\\\"{}\\\",\\\"has_alipay\\\":0,\\\"pa\\\":\\\"(com.taobao.taobao;10.41.0.1)\\\",\\\"tid\\\":\\\"\\\",\\\"ua\\\":\\\"24.8.1.2(a 11;6;986ef09629;000000000000000;000000000000000;1986ef096298531;1986ef096299169;LTE;;0;Real Manufacturer;Real Device)(1)(IBtrK4Is8HVs88wv8YRWAXNfmzpFZmAY/ieUf/PL2zo+w+RumAEAAA==)\\\",\\\"utdid\\\":\\\"aI8Tny1urzMDAClKSfNp3OZy\\\"}\",\"newBuy2UltronPage\":\"true\",\"confidentialPaymentMatchGray\":\"true\",\"xfqCouponFooterMatchGray\":\"1\",\"apdidToken\":\"IBtrK4Is8HVs88wv8YRWAXNfmzpFZmAY/ieUf/PL2zo+w+RumAEAAA==\",\"alipayFrontChecked\":\"true\",\"AsynPay\":\"notGray\",\"subscribeDiscount_sellerId_to_nickname\":\"{\\\"1639642865\\\":\\\"梦里点点01\\\"}\",\"UMP_RED_ENVELOPE\":\"UMP\",\"couponApplyBuyParams\":\"\",\"EXCLUDE_BY_NEWTON_GRAY_KEY\":true,\"paymentNotDefaultCheck\":\"true\",\"OnDemandDeliveryEnable_0a8bae5c33dfadf2aaaa860208d3eb4b\":\"false\",\"agencyPayRouter\":\"1\",\"ovsPayRouteResult\":\"true-0\",\"_F_pay_apps\":\"\",\"sd_firstInfo\":\"{\\\"1639642865\\\":{\\\"sellerId\\\":1639642865,\\\"userId\\\":1132584244}}\",\"paymentFinalResult\":\"[\\\"AlipayFrontPlanB4Newton\\\",\\\"Agency4Newton\\\"]\",\"bcflsrc\":\"1012_Initiactive\",\"buyBenefitExtParamGray\":true,\"cartTraceId\":\"2147822517542079527685785e1a33\",\"paymentSelectedCode_2fa86a8fb69c7bf6ece7297057ccbb6f\":\"ali,age\",\"order_short_title_2fa86a8fb69c7bf6ece7297057ccbb6f\":\"科学实验材料包手工拼装\",\"coupon\":\"true\",\"pageAccessed\":\"1\",\"PassParamToClient\":{\"userId\":1132584244,\"bizCodes\":\"ali.china.service.general,ali.china.taobao.kidtoys\"},\"alipayFrontFirstRender\":\"true\",\"benefitExtParamGray\":false,\"lastINTERNAL_CARDV3\":\"0\",\"__ultron1offline\":\"1\",\"membershipDiscountRouterV3\":\"1\",\"PromotionUpgrade\":\"V3DIRECT\",\"alipayFrontRenderTotalFeeCENT\":\"1090\"}"
+              }
+            }
+          }
+        }
+      },
+      "commonErrorPopup": {
+        "type": "layout$popup_window$0$0",
+        "fields": {
+          "style": {
+            "heightRatio": "0.5",
+            "needCloseButton": "false",
+            "showCloseButton": "false"
+          }
+        }
+      },
+      "commonErrorPopupTips": {
+        "type": "dinamicx$buy_v2_pop_error$0$generalv2"
+      },
+      "commonErrorPopupFooter": {
+        "type": "layout$sticky$0$0"
+      },
+      "commonErrorActionButtion": {
+        "type": "dinamicx$buy_v2_pop_bottom$0$generalv2"
+      },
+      "itemErrorPopup": {
+        "type": "layout$popup_window$0$0"
+      },
+      "itemErrorPopupHeader": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "top"
+        }
+      },
+      "ItemErrorTitle": {
+        "type": "dinamicx$buy_v2_pop_title$0$generalv2"
+      },
+      "errorItem_0": {
+        "type": "dinamicx$buy_v2_pop_item$0$generalv2",
+        "fields": {
+          "visible": "false"
+        }
+      },
+      "itemErrorPopupFooter": {
+        "type": "layout$sticky$0$0"
+      },
+      "itemErrorButton": {
+        "type": "dinamicx$buy_v2_pop_bottom$0$generalv2"
+      },
+      "actionBarComponent": {
+        "type": "dinamicx$buy_v2_action_bar$0$generalv2",
+        "fields": {
+          "bgColor": "#00000000",
+          "hideBackArrow": "false",
+          "isAutoScroll": "false",
+          "position": "actionBar",
+          "speed": "4000",
+          "title": "确认订单",
+          "unBold": "true"
+        },
+        "events": {
+          "goBackClick": [{
+            "type": "pop"
+          }]
+        }
+      },
+      "addressCard": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cornerRadius": "25",
+            "dividerHeght": "9",
+            "marginLeft": "12",
+            "marginRight": "12"
+          }
+        },
+        "cardGroup": "true"
+      },
+      "address": {
+        "type": "dinamicx$buy_v2_address$0$generalv2",
+        "fields": {
+          "address": "雪峰开发区兔喜快递超市",
+          "arrow": "true",
+          "descStyle": "desc",
+          "icon": "https://img.alicdn.com/imgextra/i4/O1CN01DhxFsl1Ug74Neipic_!!6000000002546-2-tps-66-66.png",
+          "mobile": "17688838876",
+          "name": "小小苏",
+          "phone": "17688838876"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "openUrl",
+            "fields": {
+              "pageType": "Native",
+              "params": {
+                "accurateAddressInfo": "{\"bizcode\":[],\"detailAddress\":\"null\",\"lat\":\"null\",\"lng\":\"null\"}",
+                "agencyReceive": "0",
+                "bookReturnFields": "true",
+                "chooseDeliveryID": "18220096860",
+                "enableAbroadStation": "0",
+                "enableAgency": "false",
+                "sellerId": "1639642865",
+                "sites": "[]",
+                "supportAbroadStation": "0"
+              },
+              "url": "http://my.m.taobao.com/deliver/select_address_list.htm"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-address",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "display": [{
+            "type": "postMessage",
+            "fields": {
+              "message": {
+                "status": "hidden"
+              },
+              "target": "addressRemind",
+              "type": "updateItem"
+            }
+          }],
+          "adjustTemplate": [{
+            "type": "adjustRules"
+          }, {
+            "type": "adjust"
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-address",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "dismiss": [{
+            "type": "postMessage",
+            "fields": {
+              "message": {
+                "status": "normal"
+              },
+              "target": "addressRemind",
+              "type": "updateItem"
+            }
+          }],
+          "editAddress": [{
+            "type": "openUrl",
+            "fields": {
+              "pageType": "Native",
+              "params": {
+                "deliverId": "18220096860",
+                "modifyScene": "modify"
+              },
+              "url": "http://my.m.taobao.com/deliver/add_address.htm"
+            }
+          }],
+          "adjustRulesTemplate": [{
+            "type": "adjustRules"
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_address",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "useMDZT": "false",
+                "lng": "118.495615",
+                "selectedId": "18220096860",
+                "linkAddressId": "0",
+                "options": "[{\"addressDetail\":\"雪峰开发区兔喜快递超市\",\"addressIconUrl\":\"\",\"areaName\":\"南安市\",\"attributes\":[],\"checked\":false,\"cityName\":\"泉州市\",\"consolidationGuide\":false,\"countryName\":\"\",\"defaultAddress\":true,\"deliveryAddressId\":18220096860,\"disable\":false,\"divisionCode\":\"350583\",\"editable\":true,\"enableMDZT\":false,\"enableStation\":false,\"enforceUpdate4Address\":true,\"fullName\":\"小小苏\",\"hidden\":false,\"id\":\"145067299\",\"lat\":\"25.06095\",\"lgShopId\":0,\"lng\":\"118.495615\",\"mainland\":true,\"mobile\":\"17688838876\",\"name\":\"\",\"needUpdate4Address\":false,\"needUpgradeAddress\":false,\"platformType\":\"WIRELESS_3_0\",\"postCode\":\"000000\",\"provinceName\":\"福建省\",\"stationId\":0,\"status\":\"normal\",\"storeAddress\":true,\"townDivisionId\":350583400,\"townName\":\"雪峰管委会\",\"updateAddressTip\":\"\",\"useForVirtual\":false}]",
+                "sites": "[]",
+                "lat": "25.06095"
+              }
+            }
+          }
+        }
+      },
+      "townRemind": {
+        "type": "dinamicx$buy_v2_address$0$generalv2",
+        "fields": {
+          "actionStyle": "highlight",
+          "addressStyle": "normal",
+          "arrow": "true",
+          "blockOrder": "false",
+          "highLight": "false",
+          "isAddressRecommend": "true",
+          "isHide": "true",
+          "showActions": "false",
+          "styleVersion": "v1"
+        },
+        "events": {
+          "actionTwoClick": [{
+            "type": "adjust",
+            "fields": {
+              "action": "townRemindsaveTown"
+            }
+          }],
+          "addressRecommendClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_Order_address_recommend_clk",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "adjust"
+          }],
+          "actionOneClick": [{
+            "type": "openUrl",
+            "fields": {
+              "method": "post",
+              "pageType": "Native",
+              "params": {
+                "sourceAddress": "{}"
+              },
+              "url": "http://my.m.taobao.com/deliver/edit_address.htm"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_townRemind",
+            "validate": {
+              "regex": ["^false$"],
+              "msg": ["请确认收货地址"],
+              "fields": ["blockOrder"]
+            }
+          }
+        }
+      },
+      "addressStickTop": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "floatTop"
+        },
+        "position": "body"
+      },
+      "addressRemindV2": {
+        "type": "dinamicx$buy_v2_address_sticky$0$generalv2",
+        "fields": {
+          "address": "雪峰开发区兔喜快递超市",
+          "arrow": "true",
+          "icon": "https://img.alicdn.com/imgextra/i4/O1CN01DhxFsl1Ug74Neipic_!!6000000002546-2-tps-66-66.png"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "routerEvent",
+            "fields": {
+              "eventKey": "itemClick",
+              "target": "address"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-topaddress",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-topaddress",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "editAddress": [{
+            "type": "openUrl",
+            "fields": {
+              "pageType": "Native",
+              "params": {
+                "deliverId": "18220096860",
+                "modifyScene": "modify"
+              },
+              "url": "http://my.m.taobao.com/deliver/add_address.htm"
+            }
+          }]
+        },
+        "position": "body"
+      },
+      "newHelpBuyAddressTips": {
+        "type": "dinamicx$buy_v2_common_column_with_action$0$generalv2",
+        "fields": {
+          "action": "arrow",
+          "icon": "https://img.alicdn.com/imgextra/i3/O1CN01J5l6PR1lWoUF8eL8h_!!6000000004827-2-tps-128-128.png?getAvatar=avatar",
+          "prompt": "选择收货人",
+          "title": "给爱的人也送一份"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "openUrl",
+            "fields": {
+              "pageType": "Native",
+              "params": {
+                "accurateAddressInfo": "{\"bizcode\":[],\"detailAddress\":\"null\",\"lat\":\"null\",\"lng\":\"null\"}",
+                "agencyReceive": "0",
+                "bookReturnFields": "true",
+                "chooseDeliveryID": "18220096860",
+                "enableAbroadStation": "0",
+                "enableAgency": "false",
+                "sellerId": "1639642865",
+                "sites": "[]",
+                "supportAbroadStation": "0"
+              },
+              "url": "http://my.m.taobao.com/deliver/select_address_list.htm"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_hbfa_select",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_hbfa_select",
+              "arg2": "828931425108",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_newHelpBuyAddressTips"
+          }
+        }
+      },
+      "shopCard_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cornerRadius": "25",
+            "dividerHeght": "9",
+            "marginLeft": "12",
+            "marginRight": "12"
+          }
+        },
+        "cardGroup": "true"
+      },
+      "shopTitle_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_common_title$0$generalv2",
+        "fields": {
+          "icon": "//img.alicdn.com/tps/i2/TB1wopUHVXXXXXyXpXXAAT2HVXX-63-63.png",
+          "iconV2": "https://img.alicdn.com/imgextra/i3/O1CN011EGtxN1T4jOBpHKmk_!!6000000002329-2-tps-93-42.png",
+          "title": "小扳手科学实验"
+        }
+      },
+      "orderLine_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "features": {
+          "linkage": {
+            "ref": "generalV2_orderLine",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "outId": "2fa86a8fb69c7bf6ece7297057ccbb6f",
+                "orderOutId": "2fa86a8fb69c7bf6ece7297057ccbb6f"
+              }
+            }
+          }
+        }
+      },
+      "itemInfo_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "dinamicx$buy_v2_item$0$generalv2",
+        "fields": {
+          "arrow": "false",
+          "desc": "颜色分类:【送工具】材料包;",
+          "icon": "//gw.alicdn.com/imgextra/i3/1639642865/O1CN01UKsMbr1X2DiLNWus3_!!1639642865.jpg",
+          "label": ["7天无理由退货", "极速退款"],
+          "lastQuantity": "1",
+          "max": "2147483647",
+          "min": "1",
+          "price": "￥10.9",
+          "priceAfterPromotion": "￥10.9",
+          "priceAfterPromotionStripZero": "￥10.9",
+          "priceAfterPromotionText": "券后",
+          "quantity": "1",
+          "serviceDesc": [],
+          "serviceList": [{
+            "text": "7天无理由退货"
+          }, {
+            "text": "极速退款"
+          }],
+          "showPriceAfterPromotion": "false",
+          "showPriceType": "originalPrice",
+          "step": "1",
+          "title": "科学实验材料包手工拼装"
+        },
+        "events": {
+          "quantityChange": [{
+            "type": "quantityChange"
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-number",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_ConfirmOrder_tie-inServ_clk",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-number",
+              "arg2": "￥10.9-828931425108-5558309004213-1",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_ConfirmOrder_tie-inServ_exp",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_itemInfo"
+          }
+        }
+      },
+      "itemServicePopup_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "layout$popup_window$0$0",
+        "fields": {
+          "code": "itemService",
+          "style": {
+            "needCloseButton": "true"
+          }
+        }
+      },
+      "itemServicePopupHeader_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "top"
+        }
+      },
+      "itemServiceTitle_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "dinamicx$buy_v2_pop_title$0$generalv2",
+        "fields": {
+          "dialogTitle": "服务保障"
+        }
+      },
+      "itemServicePopupFooter_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "bottom"
+        }
+      },
+      "itemServiceButton_2fa86a8fb69c7bf6ece7297057ccbb6f": {
+        "type": "dinamicx$buy_v2_pop_bottom$0$generalv2",
+        "fields": {
+          "buttonText": "确定"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "adjust",
+            "fields": {
+              "isConfirm": "true",
+              "option": "confirm"
+            }
+          }]
+        }
+      },
+      "deliveryServiceV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_item_ext$0$generalv2",
+        "fields": {
+          "arrow": "true",
+          "group": {
+            "max": "1",
+            "min": "1"
+          },
+          "state": "0",
+          "subtitles": [{
+            "text": "快递 包邮"
+          }, {
+            "text": "预计后天送达"
+          }, {
+            "displayType": "deliveryHome"
+          }],
+          "subtitlesV2": [{
+            "items": [{
+              "benefitPointType": "postage",
+              "text": "快递 包邮"
+            }]
+          }, {
+            "items": [{
+              "benefitPointType": "postTime",
+              "style": "#00A67C",
+              "text": "预计后天送达"
+            }]
+          }],
+          "title": "配送服务"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "popupWindow",
+            "fields": {
+              "code": "deliveryServicePopupV2"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-deliveryserviceV2",
+              "arg2": "false",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-deliveryserviceV2",
+              "arg2": "false",
+              "args": {
+                "state": "${fields.state}"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "switchDeliveryButton": [{
+            "type": "adjustRules",
+            "fields": {
+              "actionType": "props_writeback"
+            }
+          }, {
+            "type": "adjust"
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_deliveryServiceV2",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "deliverySubmitParams": "{\"deliveryMethodOptions\":[{\"fareCent\":0,\"id\":\"20\",\"serviceType\":\"-4\",\"userChooseLogisticsInfo\":\"{\\\"childServiceType\\\":-4,\\\"cp\\\":\\\"default\\\",\\\"logisticsType\\\":0,\\\"renderV2\\\":false,\\\"serviceType\\\":-4}\"}],\"hasDeliveryService\":\"false\",\"orderId\":\"0a8bae5c33dfadf2aaaa860208d3eb4b\",\"selectedId\":\"20\"}",
+                "orderId": "0a8bae5c33dfadf2aaaa860208d3eb4b"
+              }
+            }
+          },
+          "ut": {
+            "args": {
+              "deliveryTip": "快递 包邮",
+              "insuranceTip": "",
+              "timeTip": "预计后天送达",
+              "timingExt": "%7B%22sc%22%3A%22SHIP_NORMAL%22%2C%22dt%22%3A%222025-08-05%22%2C%22actual%22%3A%22%E9%A2%84%E8%AE%A1%E5%90%8E%E5%A4%A9%E9%80%81%E8%BE%BE%22%2C%22df%22%3A%22TWO_DAY_REACH%22%2C%22rsd%22%3A%222%22%2C%22sf%22%3A%22NEW_TAOBAO_PUBLISH_TOOL%7Creal_sell%7CCAN_APPEND_PREDICT_SHIP_TIME%22%2C%22rsh%22%3A%2248%22%2C%22subScene%22%3A%22main%22%2C%22dc%22%3A%22REACH_PREDICT%22%7D",
+              "highLightStyle": "#00A67C",
+              "benefitPointTip": "预计后天送达",
+              "benefitPointType": "postTime"
+            },
+            "arg2": null,
+            "autoUt": "true",
+            "arg1": "Page_ConfirmOrderV2_deliveryServiceV2"
+          }
+        }
+      },
+      "deliveryServicePopupV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$popup_window$0$0",
+        "fields": {
+          "code": "deliveryServicePopupV2",
+          "style": {
+            "heightRatio": "0.88",
+            "needCloseButton": "true"
+          }
+        }
+      },
+      "deliveryServicePopupHeadV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "top"
+        }
+      },
+      "deliveryServicePopupTitleV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_pop_title$0$generalv2",
+        "fields": {
+          "title": "配送服务"
+        },
+        "features": {
+          "ut": {
+            "args": null,
+            "arg2": null,
+            "autoUt": "true",
+            "arg1": "Page_ConfirmOrderV2_deliveryServicePopup"
+          }
+        }
+      },
+      "deliveryMethodSelect_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$linear$0$0"
+      },
+      "deliveryMethodHeader_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_common_title$0$generalv2",
+        "status": "hidden",
+        "fields": {
+          "ignoreCard": "true",
+          "title": "发货服务"
+        }
+      },
+      "deliveryMethodOptionsV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_group_items_selection$0$generalv2",
+        "fields": {
+          "group": {
+            "items": [{
+              "id": "20",
+              "prompt": "快递 包邮",
+              "title": "普通配送"
+            }],
+            "max": "1",
+            "min": "1",
+            "paddingBottom": "1",
+            "selectedId": ["20"]
+          },
+          "ignoreCard": "true"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-deliveryway",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-deliveryway",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_deliveryMethodOptionsV2",
+            "input": "true",
+            "hidden": {
+              "extensionMap": {
+                "deliveryMethodQueryParams": "{\"deliveryMethodOptions\":[{\"fareCent\":0,\"id\":\"20\",\"serviceType\":\"-4\",\"userChooseLogisticsInfo\":\"{\\\"childServiceType\\\":-4,\\\"cp\\\":\\\"default\\\",\\\"logisticsType\\\":0,\\\"renderV2\\\":false,\\\"serviceType\\\":-4}\"}],\"hasDeliveryService\":\"false\",\"orderId\":\"0a8bae5c33dfadf2aaaa860208d3eb4b\",\"originalSelectedId\":\"20\"}"
+              }
+            }
+          }
+        }
+      },
+      "deliveryTimeSelect_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$linear$0$0"
+      },
+      "deliveryServiceShipDetailTtitleV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_common_title$0$generalv2",
+        "fields": {
+          "ignoreCard": "true",
+          "title": "时效"
+        }
+      },
+      "deliveryServiceShipDetailV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_group_items_selection$0$generalv2",
+        "fields": {
+          "group": {
+            "items": [{
+              "desc": [{
+                "text": "48小时内发货，预计后天送达"
+              }],
+              "images": ["//gw.alicdn.com/imgextra/i3/1639642865/O1CN01UKsMbr1X2DiLNWus3_!!1639642865.jpg"],
+              "multiLevelInfo": {
+                "bgColor": "#F9F9F9",
+                "radius": "12"
+              },
+              "optional": "none"
+            }]
+          },
+          "ignoreCard": "true"
+        },
+        "features": {
+          "ut": {
+            "args": {
+              "timingExt": "%7B%22828931425108_5558309004213%22%3A%7B%22sc%22%3A%22SHIP_NORMAL%22%2C%22dt%22%3A%222025-08-05%22%2C%22actual%22%3A%2248%E5%B0%8F%E6%97%B6%E5%86%85%E5%8F%91%E8%B4%A7%EF%BC%8C%E9%A2%84%E8%AE%A1%E5%90%8E%E5%A4%A9%E9%80%81%E8%BE%BE%22%2C%22df%22%3A%22TWO_DAY_REACH%22%2C%22rsd%22%3A%222%22%2C%22sf%22%3A%22NEW_TAOBAO_PUBLISH_TOOL%7Creal_sell%7CCAN_APPEND_PREDICT_SHIP_TIME%22%2C%22rsh%22%3A%2248%22%2C%22subScene%22%3A%22sub%22%2C%22dc%22%3A%22REACH_PREDICT%22%7D%7D"
+            },
+            "arg2": null,
+            "autoUt": "true",
+            "arg1": "Page_ConfirmOrderV2_exp_pop_newDelivery"
+          }
+        }
+      },
+      "deliveryServicePopupFooterV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "bottom"
+        }
+      },
+      "deliveryServiceButtomV2_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_pop_bottom$0$generalv2",
+        "fields": {
+          "buttonText": "确定"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_ConfirmOrderV2_deliveryServiceButtomV2",
+              "eventId": "2201",
+              "page": "generalV2"
+            }
+          }, {
+            "type": "adjust",
+            "fields": {
+              "isConfirm": "true",
+              "needAdjustOptimize": "true",
+              "option": "confirm"
+            }
+          }]
+        },
+        "position": "stickyBottom"
+      },
+      "freightService_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_item_ext$0$generalv2",
+        "fields": {
+          "arrow": "true",
+          "orientation": "horizontal",
+          "subtitles": [{
+            "style": "normal",
+            "text": "退换货享运费权益"
+          }],
+          "title": "退货权益"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Returnrights_clk",
+              "args": {
+                "serviceCode": "PLAT-SEC-byf"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "popupWindow",
+            "fields": {
+              "code": "freightServicePop"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Returnrights_exp",
+              "args": {
+                "serviceCode": "PLAT-SEC-byf"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        }
+      },
+      "freightServicePop_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$popup_window$0$0",
+        "fields": {
+          "code": "freightServicePop",
+          "style": {
+            "cornerRadius": "6"
+          }
+        }
+      },
+      "freightServicePopHeader_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "top"
+        }
+      },
+      "freightServicePopHeaderTitle_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v3_pop_title$0$generalv2",
+        "fields": {
+          "title": "退货权益"
+        }
+      },
+      "freightServicePopBody_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cardMargin": "8"
+          }
+        }
+      },
+      "sellerFreightServiceVO_0a8bae5c33dfadf2aaaa860208d3eb4b_seller": {
+        "type": "dinamicx$buy_v3_group_items_selection$0$generalv2",
+        "fields": {
+          "group": {
+            "attachOrderId": "0a8bae5c33dfadf2aaaa860208d3eb4b",
+            "items": [{
+              "addtionalTitle": "退换货享运费权益",
+              "addtionalTitleStyle": "highlight",
+              "collectInfo": {
+                "serviceOptionParam": "{'bizType':1,'optionId':'checkBoxOptionId','serviceId':'1324001001','storeId':0}"
+              },
+              "freightInsuranceType": "seller",
+              "id": "selected",
+              "optional": "none",
+              "promptStyle": "sub",
+              "title": "退货包运费"
+            }],
+            "max": "1",
+            "min": "1",
+            "paddingBottom": "13",
+            "selectedId": ["selected"]
+          },
+          "ignoreCard": "true"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Returnrights_layer_clk",
+              "args": {
+                "serviceCode": "PLAT-SEC-byf"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Returnrights_layer_exp",
+              "args": {
+                "serviceCode": "PLAT-SEC-byf"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_sellerFreightServiceVO",
+            "submit": "true",
+            "input": "true"
+          }
+        }
+      },
+      "FreightServicetotalSupply_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v3_item_step$0$generalv2",
+        "fields": {
+          "step": [{
+            "stepTitle": "发起退换货申请，选择上门取件，支付运费时，自动减免1公斤内运费",
+            "stepTitleStyle": "sub"
+          }, {
+            "stepTitle": "发起退换货申请，选择自行寄回，退换货完成后，自动补偿至买家账户",
+            "stepTitleStyle": "sub"
+          }]
+        }
+      },
+      "freightServicePopFooter_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "bottom"
+        }
+      },
+      "freightServicePopButton_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v3_tmp$0$generalv2",
+        "fields": {
+          "buttonText": "确定",
+          "isHide": "false"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "adjust",
+            "fields": {
+              "isConfirm": "true",
+              "needAdjustOptimize": "true",
+              "option": "confirm"
+            }
+          }]
+        }
+      },
+      "orderRemark_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_item_ext$0$generalv2",
+        "fields": {
+          "arrow": "true",
+          "subtitles": [{
+            "style": "desc",
+            "text": "无备注"
+          }],
+          "title": "订单备注"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_ConfirmOrder_Button-beizhu",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "popupWindow",
+            "fields": {
+              "code": "memRemarkPopWindow"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_ConfirmOrder_Button-beizhu",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        }
+      },
+      "memRemarkPopWindow_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$popup_window$0$0",
+        "fields": {
+          "code": "memRemarkPopWindow",
+          "style": {
+            "needCloseButton": "true"
+          }
+        }
+      },
+      "memoPopupHeader_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "top"
+        }
+      },
+      "memoTitle_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_pop_title$0$generalv2",
+        "fields": {
+          "dialogTitle": "订单备注",
+          "title": "订单备注"
+        }
+      },
+      "memoPopupBody_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$linear$0$0"
+      },
+      "memo_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_order_remark$0$generalv2",
+        "fields": {
+          "maxLength": "200",
+          "placeholder": "选填，请先和商家协商一致，付款后商家可见",
+          "text": ""
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_memo",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "outId": "0a8bae5c33dfadf2aaaa860208d3eb4b"
+              }
+            }
+          }
+        }
+      },
+      "memoPopupFooter_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "bottom"
+        }
+      },
+      "memoButton_0a8bae5c33dfadf2aaaa860208d3eb4b": {
+        "type": "dinamicx$buy_v2_pop_bottom$0$generalv2",
+        "fields": {
+          "buttonText": "确定"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "adjust",
+            "fields": {
+              "isConfirm": "true",
+              "needAdjustOptimize": "true",
+              "option": "confirm"
+            }
+          }]
+        }
+      },
+      "conditionSaleCard": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cornerRadius": "25",
+            "dividerHeght": "9",
+            "marginLeft": "12",
+            "marginRight": "12"
+          }
+        },
+        "cardGroup": "true"
+      },
+      "newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1": {
+        "type": "dinamicx$buy_v2_item_tie_sale_2024$0$generalv2",
+        "__nodeCode": "newtonSingleItemConditionSaleCardV3",
+        "fields": {
+          "abExperiments": {
+            "enablePicSizeBalance": "true",
+            "itemChangeMtop": "true",
+            "promotionTagsNewStyle": "true"
+          },
+          "accurateExposureOperate": "buyOneItemChange,buyOneSkuChange",
+          "changeItem": {
+            "changeItemIcon": "https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png",
+            "changeItemIconV2": "https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png",
+            "changeItemText": "换一换"
+          },
+          "changeItemIcon": "https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png",
+          "changeItemIconV2": "https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png",
+          "changeItemText": "换一换",
+          "currentIndex": "0",
+          "exposureOffset": "66",
+          "exposurePercent": "1",
+          "helpIcon": "https://gw.alicdn.com/imgextra/i1/O1CN014GZJEX1SBlwZ1A2ql_!!6000000002209-2-tps-39-39.png",
+          "helpIconV2": "https://gw.alicdn.com/imgextra/i1/O1CN014GZJEX1SBlwZ1A2ql_!!6000000002209-2-tps-39-39.png",
+          "hiddenParam": "{\"abExperiments\":{\"itemChangeMtop\":\"true\",\"enablePicSizeBalance\":\"true\",\"promotionTagsNewStyle\":\"true\"},\"argsValue\":{\"buyOneUtAttr\":\"${fields.utArgs.buyOneUtAttr}\"},\"buyOneRecommendParams\":\"{\\\"abExperimentDTO\\\":{\\\"abExperiments\\\":{}},\\\"buyOneBusinessDTO\\\":{\\\"crossShopMixed\\\":false,\\\"crossShopMixedRootCatIds\\\":\\\"350213,50024186,125030002,50020857,120894001,1801,11,50025968,127450004,50230002,14,50454031,16,50025707,50025705,201514001,20,21,122952001,50020332,23,50020579,201273575,25,26,27,28,29,30,33,34,50024153,35,50018264,50388003,122950001,124488007,50018004,50020808,122684003,50014927,124050001,125022021,127588002,127876007,121536007,124466001,50023878,50012100,50019780,124242008,127492006,126488008,50012600,50013886,50020275,50012082,50007218,124468001,50007216,123690003,50158001,1101,127458007,50013864,50018222,50802001,50024099,1625,50016422,50010788,50024612,98,122718004,50025618,121266001,50025111,50023575,50074001,50025110,126700003,50014854,124458005,50020485,126518004,50018948,124044001,50012029,201162107,50023804,201160314,50023282,200806005,50022517,50017652,50010728,201207402,50008163,122338003,126602002,124470001,201356955,124470006,50008165,50008164,126762001,201156706,140701,50014811,122966004,50468001,50016349,124568010,50016348,50014812,50011740,127924022,50002768,124728004,201149009,50510002,1201,50020681,50002766,50008141,50026316,123500005,201230407,50510011,127508003,124354002,50734010,201530301,50011972,50006843,50026555,50006842,350404,124484008,120886001,120950002,50011699,50025010,50025009,50026800,50025008,50050359,124698018,127442006,50025012,50023722,122928002,50023721,124750013,50022703,50025007,50011949,50025004,50023724,122650005,50026535,201307427,50023717,50010404,123536002,50008090,50017311,201310232,1512,127878006,125082008,50019095,201136401,127110013,50017300,50008075,50024971,122852001,124912001,50020611,127484003,127452002,350201,2813,50011397,50012164,201173506\\\",\\\"doItemChange\\\":false,\\\"exposureScenes\\\":[\\\"1\\\",\\\"2\\\"],\\\"needSortItemByPrice\\\":false,\\\"newService\\\":false,\\\"ultron3ComponentName\\\":\\\"newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1\\\"},\\\"buyOneOrderList\\\":[{\\\"componentOrderLineList\\\":[{\\\"deliveryDTO\\\":{\\\"addressId\\\":18220096860,\\\"divisionCode\\\":350583,\\\"townDivisionCode\\\":350583400},\\\"itemId\\\":828931425108,\\\"priceDTO\\\":{\\\"actualTotalFee\\\":1090,\\\"itemDiscountedUnitPrice\\\":1090,\\\"price\\\":1090,\\\"unitPrice\\\":0},\\\"productDTO\\\":{\\\"categoryId\\\":50024613,\\\"rootCategoryId\\\":25},\\\"sellerId\\\":1639642865,\\\"skuId\\\":5558309004213}]}],\\\"buyOneSourceDTO\\\":{\\\"lightBuy\\\":false,\\\"newBuy\\\":false,\\\"taoBuy3\\\":true,\\\"tmallBuyV2\\\":false,\\\"ttid\\\":\\\"600000@taobao_android_10.41.0.1\\\",\\\"ultronVersion\\\":\\\"v3\\\",\\\"umfVersion\\\":\\\"0.1.0\\\"},\\\"itemDiscountedTotalPrice\\\":1090,\\\"matchBuyChangeItemContext\\\":{\\\"info\\\":{\\\"changeIndex\\\":0,\\\"exposureSenece\\\":\\\"2\\\",\\\"items\\\":[{\\\"cat1Id\\\":\\\"25\\\",\\\"catId\\\":\\\"201181401\\\",\\\"detailId\\\":\\\"2180436300297\\\",\\\"itemId\\\":\\\"930190839922\\\",\\\"pvid\\\":\\\"2a4a85a6-7476-4d8d-bff0-5eef9e4cc323\\\",\\\"sellerId\\\":\\\"2218104308919\\\",\\\"skuId\\\":\\\"5815648384343\\\"}],\\\"queryTpp\\\":true,\\\"thisDetailId\\\":\\\"2180436300297\\\"}}}\",\"changeItemContext\":{\"changeItemIcon\":\"https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png\",\"changeItemIconV2\":\"https://gw.alicdn.com/imgextra/i2/O1CN01W37GJe1mc93Anh28r_!!6000000004974-2-tps-42-42.png\",\"changeItemText\":\"换一换\",\"info\":{\"changeIndex\":0,\"exposureSenece\":\"2\",\"items\":[{\"cat1Id\":\"25\",\"catId\":\"201181401\",\"detailId\":\"2180436300297\",\"itemId\":\"930190839922\",\"pvid\":\"2a4a85a6-7476-4d8d-bff0-5eef9e4cc323\",\"sellerId\":\"2218104308919\",\"skuId\":\"5815648384343\"}],\"queryTpp\":true,\"thisDetailId\":\"2180436300297\"}},\"componentBusinessCode\":\"buyOneBusiness\",\"currentIndex\":\"0\",\"exposurePercent\":\"1\",\"extraParam\":{},\"helpIcon\":\"https://gw.alicdn.com/imgextra/i1/O1CN014GZJEX1SBlwZ1A2ql_!!6000000002209-2-tps-39-39.png\",\"helpIconV2\":\"https://gw.alicdn.com/imgextra/i1/O1CN014GZJEX1SBlwZ1A2ql_!!6000000002209-2-tps-39-39.png\",\"helpUrl\":\"//pages.tmall.com/wow/a/act/tmall/dailygroup/2433/wupr?wh_pid=daily-232765\",\"itemCount\":1,\"items\":[{\"abExperiments\":{\"showTagsInV2\":true,\"showDetailInV2\":true},\"activityDetailId\":\"2180436300297\",\"bizCode\":\"buyOneMktShell\",\"buyOneItemFrom\":\"TPP_ITEM\",\"buyOnePrice\":\"￥4.20\",\"checked\":false,\"detailPopContext\":{\"abExperiments\":{\"showDetailInV2\":true},\"detail\":{\"detailCdnUrl\":\"https://itemcdn.tmall.com/desc/icoss!0930190839922!14060165495\",\"detailPicList\":[],\"detailTitle\":\"宝贝详情\"},\"footer\":{\"arg1\":\"Page_NewBuy_NewConfirmOrder_Condition_Sale_Pic_collocation-buyOneBusiness\",\"args\":{\"buyOneUtAttr\":\"%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%22%2C%22serviceTag%22%3A%22%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22LEVEL0%22%7D\"},\"buyBtnText\":\"立即购买\",\"buyOneItemChecked\":false,\"nativeOrder\":{\"broadcastParams\":{\"param\":{\"bizCode\":\"purchase\",\"type\":\"routerEvent\",\"fields\":{\"eventKey\":\"itemClick_0\",\"target\":\"newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1\"}},\"event\":\"auraEventNotification\"}}},\"header\":{\"headerPicList\":[\"//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg\",\"//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01nDEUH42FkxZQbEYHj_!!2218104308919.jpg\",\"//img.alicdn.com/bao/uploaded/i3/2218104308919/O1CN01ZbeYB72FkxZQbAnOA_!!2218104308919.jpg\",\"//img.alicdn.com/bao/uploaded/i1/2218104308919/O1CN01aQnT0P2FkxZQ9JOAu_!!2218104308919.jpg\",\"//img.alicdn.com/bao/uploaded/i1/2218104308919/O1CN01UXGiLI2FkxZQJnsUU_!!2218104308919.jpg\",\"//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01VeNays2FkxZQbEU7o_!!2218104308919.jpg\"]},\"main\":{\"detailComment\":{\"commentUrl\":\"https://h5.m.taobao.com/app/rate/www/rate-list/index.html?auctionNumId=930190839922\",\"userTrackFieldsMap\":{\"commentClick\":{\"eventId\":\"2101\",\"arg1\":\"Page_NewConfirmOrder_Condition_Sale_Pic_comment-buyOneBusiness\"},\"commentExposure\":{\"eventId\":\"2201\",\"arg1\":\"Page_NewConfirmOrder_Condition_Sale_Pic_comment-buyOneBusiness\"},\"commentOpenDuration\":{\"eventId\":\"2001\",\"arg1\":\"Page_NewConfirmOrder_Condition_Sale_Pic_comment_open-buyOneBusiness\"}}},\"itemTitle\":\"木质电动滑行飞机模型\",\"serviceTags\":[{\"attributes\":[],\"checked\":false,\"disable\":false,\"hidden\":false,\"id\":\"145067258\",\"name\":\"\",\"status\":\"normal\",\"text\":\"7天无理由退货\",\"textBold\":false,\"textColor\":\"#00A67C\",\"textSize\":\"13\"},{\"attributes\":[],\"checked\":false,\"disable\":false,\"hidden\":false,\"id\":\"145067259\",\"name\":\"\",\"status\":\"normal\",\"text\":\"包邮\",\"textBold\":false,\"textColor\":\"#00A67C\",\"textSize\":\"13\"}],\"serviceTagsPic\":\"https://img.alicdn.com/imgextra/i4/O1CN01w7T6VW1EV60uY4ATc_!!6000000000356-2-tps-28-28.png\",\"shopIcon\":\"https://img.alicdn.com/imgextra/i4/O1CN01cxtHyU27HdA69yrnl_!!6000000007772-2-tps-80-36.png\",\"shopTitle\":\"优可品创\",\"skuIcon\":\"//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg\",\"skuName\":\"已选：【1个装】手工diy滑翔机-不含电池;\",\"subPrice\":{\"bgColor\":\"#FEEDE5\",\"color\":\"#FF5000\",\"prefix\":\"顺买价￥\",\"price\":\"4\",\"pricePoint\":\".20\"}},\"popUrl\":\"https://meta.m.taobao.com/app/tb-trade/newbuy-micro-detail/home?wh_weex=true&weex_mode=dom&wx_limit_raster_cache=true\"},\"exposureScene\":\"2\",\"exposureState\":false,\"extraParam\":{\"hideOriginalPrice\":\"true\"},\"index\":\"0\",\"invalid\":false,\"itemId\":\"930190839922\",\"itemPic\":\"//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg\",\"itemProperties\":[],\"itemTitle\":\"木质电动滑行飞机模型\",\"itemUtArgs\":{\"buyOneUtAttr\":\"%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D\"},\"mixed\":true,\"originSkuId\":\"5815648384343\",\"originalPrice\":\"￥4.20\",\"originalPriceShow\":\"\",\"pChannelKey\":\"taobaoTradeBuildBuy1\",\"pItemType\":\"3\",\"pThreshold\":0,\"pToolCode\":\"taobaoBuy1\",\"promotionId\":\"Tmall$taobaoBuy1-95096619388_2180436300297\",\"sellerId\":\"2218104308919\",\"sellerPointTags\":[{\"attributes\":[],\"checked\":false,\"disable\":false,\"hidden\":false,\"id\":\"145067260\",\"image\":\"https://img.alicdn.com/imgextra/i1/O1CN01IEQ7z61SWNkT3lAFa_!!6000000002254-2-tps-28-28.png\",\"name\":\"\",\"status\":\"normal\",\"text\":\"已售2000+\",\"textBold\":false,\"textColor\":\"#995C1F\",\"textSize\":\"13\"}],\"sellerPointTagsPic\":\"https://img.alicdn.com/imgextra/i1/O1CN01IEQ7z61SWNkT3lAFa_!!6000000002254-2-tps-28-28.png\",\"serviceTags\":[{\"attributes\":[],\"checked\":false,\"disable\":false,\"hidden\":false,\"id\":\"145067261\",\"name\":\"\",\"status\":\"normal\",\"text\":\"7天无理由退货\",\"textBold\":false,\"textColor\":\"#00A67C\",\"textSize\":\"13\"}],\"serviceTagsPic\":\"https://img.alicdn.com/imgextra/i4/O1CN01w7T6VW1EV60uY4ATc_!!6000000000356-2-tps-28-28.png\",\"shopTitle\":{\"attributes\":[],\"checked\":false,\"disable\":false,\"hidden\":false,\"id\":\"145067262\",\"name\":\"\",\"status\":\"normal\",\"text\":\"优可品创\",\"textBold\":false,\"textColor\":\"#7C889C\",\"textColorDarkMode\":\"#7C889C\"},\"showSkuSelect\":\"false\",\"skuId\":\"5815648384343\",\"skuTitle\":\"【1个装】手工diy滑翔机-不含电池;\",\"state\":\"unsel\",\"subTitleFontColorV2\":\"#999999\",\"subTitleV2\":\"优可品创\",\"tags\":[],\"tppDgLevel\":\"LEVEL0\"}],\"matchOpenPreLoadGray\":false,\"openPreLoad\":false,\"subTitle\":\"包邮\",\"title\":\"顺手买1件\",\"titlePicUrlV2\":\"https://img.alicdn.com/imgextra/i4/O1CN01nBG4n11MdM57zZw7q_!!6000000001457-2-tps-205-45.png\",\"titlePicUrlV2DarkMode\":\"https://img.alicdn.com/imgextra/i3/O1CN01D93HaN1YOUcOvAA4z_!!6000000003049-2-tps-205-45.png\",\"titleSplitPic\":\"https://img.alicdn.com/imgextra/i2/O1CN01AuRgmS1XaZRvKLBcA_!!6000000002940-2-tps-7-7.png\",\"utArgs\":{\"$ref\":\"$.items[0].itemUtArgs\"},\"version\":\"v3\",\"visible\":true}",
+          "itemChangeMtop": {
+            "data": {
+              "params": "{\"abExperimentDTO\":{\"abExperiments\":{}},\"buyOneBusinessDTO\":{\"crossShopMixed\":false,\"crossShopMixedRootCatIds\":\"350213,50024186,125030002,50020857,120894001,1801,11,50025968,127450004,50230002,14,50454031,16,50025707,50025705,201514001,20,21,122952001,50020332,23,50020579,201273575,25,26,27,28,29,30,33,34,50024153,35,50018264,50388003,122950001,124488007,50018004,50020808,122684003,50014927,124050001,125022021,127588002,127876007,121536007,124466001,50023878,50012100,50019780,124242008,127492006,126488008,50012600,50013886,50020275,50012082,50007218,124468001,50007216,123690003,50158001,1101,127458007,50013864,50018222,50802001,50024099,1625,50016422,50010788,50024612,98,122718004,50025618,121266001,50025111,50023575,50074001,50025110,126700003,50014854,124458005,50020485,126518004,50018948,124044001,50012029,201162107,50023804,201160314,50023282,200806005,50022517,50017652,50010728,201207402,50008163,122338003,126602002,124470001,201356955,124470006,50008165,50008164,126762001,201156706,140701,50014811,122966004,50468001,50016349,124568010,50016348,50014812,50011740,127924022,50002768,124728004,201149009,50510002,1201,50020681,50002766,50008141,50026316,123500005,201230407,50510011,127508003,124354002,50734010,201530301,50011972,50006843,50026555,50006842,350404,124484008,120886001,120950002,50011699,50025010,50025009,50026800,50025008,50050359,124698018,127442006,50025012,50023722,122928002,50023721,124750013,50022703,50025007,50011949,50025004,50023724,122650005,50026535,201307427,50023717,50010404,123536002,50008090,50017311,201310232,1512,127878006,125082008,50019095,201136401,127110013,50017300,50008075,50024971,122852001,124912001,50020611,127484003,127452002,350201,2813,50011397,50012164,201173506\",\"doItemChange\":false,\"exposureScenes\":[\"1\",\"2\"],\"needSortItemByPrice\":false,\"newService\":false,\"ultron3ComponentName\":\"newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1\"},\"buyOneOrderList\":[{\"componentOrderLineList\":[{\"deliveryDTO\":{\"addressId\":18220096860,\"divisionCode\":350583,\"townDivisionCode\":350583400},\"itemId\":828931425108,\"priceDTO\":{\"actualTotalFee\":1090,\"itemDiscountedUnitPrice\":1090,\"price\":1090,\"unitPrice\":0},\"productDTO\":{\"categoryId\":50024613,\"rootCategoryId\":25},\"sellerId\":1639642865,\"skuId\":5558309004213}]}],\"buyOneSourceDTO\":{\"lightBuy\":false,\"newBuy\":false,\"taoBuy3\":true,\"tmallBuyV2\":false,\"ttid\":\"600000@taobao_android_10.41.0.1\",\"ultronVersion\":\"v3\",\"umfVersion\":\"0.1.0\"},\"itemDiscountedTotalPrice\":1090,\"matchBuyChangeItemContext\":{\"info\":{\"changeIndex\":0,\"exposureSenece\":\"2\",\"items\":[{\"cat1Id\":\"25\",\"catId\":\"201181401\",\"detailId\":\"2180436300297\",\"itemId\":\"930190839922\",\"pvid\":\"2a4a85a6-7476-4d8d-bff0-5eef9e4cc323\",\"sellerId\":\"2218104308919\",\"skuId\":\"5815648384343\"}],\"queryTpp\":true,\"thisDetailId\":\"2180436300297\"}}}"
+            },
+            "mtopApi": "mtop.taobao.trade.buyone.recommend",
+            "version": "1.0"
+          },
+          "itemCount": "1",
+          "items": [{
+            "activityDetailId": "2180436300297",
+            "buyOnePrice": "￥4.20",
+            "index": "0",
+            "invalid": "false",
+            "itemId": "930190839922",
+            "itemPic": "//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg",
+            "itemTitle": "木质电动滑行飞机模型",
+            "itemUtArgs": {
+              "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+            },
+            "originalPrice": "",
+            "sellerPointTags": [{
+              "text": "已售2000+",
+              "textColor": "#995C1F",
+              "textSize": "13"
+            }],
+            "sellerPointTagsPic": "https://img.alicdn.com/imgextra/i1/O1CN01IEQ7z61SWNkT3lAFa_!!6000000002254-2-tps-28-28.png",
+            "serviceTags": [{
+              "text": "7天无理由退货",
+              "textColor": "#00A67C",
+              "textSize": "13"
+            }],
+            "serviceTagsPic": "https://img.alicdn.com/imgextra/i4/O1CN01w7T6VW1EV60uY4ATc_!!6000000000356-2-tps-28-28.png",
+            "shopTitle": {
+              "text": "优可品创",
+              "textBold": "false",
+              "textColor": "#7C889C",
+              "textColorDarkMode": "#7C889C"
+            },
+            "showSkuSelect": "false",
+            "skuId": "5815648384343",
+            "skuTitle": "【1个装】手工diy滑翔机-不含电池;",
+            "state": "unsel",
+            "subTitleV2": "优可品创"
+          }],
+          "matchOpenPreLoadGray": "false",
+          "mtopConfig": {
+            "data": {
+              "bizCode": "buyone"
+            },
+            "mtopApi": "mtop.taobao.trade.track.submit",
+            "version": "1.0"
+          },
+          "openPreLoad": "false",
+          "subTitle": "包邮",
+          "title": "顺手买1件",
+          "titlePicUrlV2": "https://img.alicdn.com/imgextra/i4/O1CN01nBG4n11MdM57zZw7q_!!6000000001457-2-tps-205-45.png",
+          "titlePicUrlV2DarkMode": "https://img.alicdn.com/imgextra/i3/O1CN01D93HaN1YOUcOvAA4z_!!6000000003049-2-tps-205-45.png",
+          "titleSplitPic": "https://img.alicdn.com/imgextra/i2/O1CN01AuRgmS1XaZRvKLBcA_!!6000000002940-2-tps-7-7.png",
+          "utArgs": {
+            "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+          },
+          "version": "v3",
+          "visible": "true"
+        },
+        "events": {
+          "itemClick_0": [{
+            "type": "mtop.requestData",
+            "fields": {
+              "api": "mtop.taobao.trade.track.submit",
+              "data": {
+                "bizCode": "buyone",
+                "trackParams": "[{\"actionType\":\"click\",\"exParams\":{\"activityDetailId\":\"2180436300297\",\"itemId\":\"930190839922\",\"skuId\":\"5815648384343\"},\"pageType\":\"taobuy2\"}]"
+              },
+              "method": "POST",
+              "v": "1.0"
+            }
+          }, {
+            "type": "adjustRules",
+            "fields": {
+              "actionParams": {
+                "selectedActivityDetailId": "2180436300297"
+              },
+              "actionType": "props_writeback"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button_collocation-buyOneBusiness",
+              "arg2": "conditionalSaleCard",
+              "args": {
+                "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "adjust"
+          }],
+          "picClick_0": [{
+            "type": "mtop.requestData",
+            "fields": {
+              "api": "mtop.taobao.trade.track.submit",
+              "data": {
+                "bizCode": "buyeone",
+                "trackParams": "[{\"actionType\":\"clickPic\",\"exParams\":{\"activityDetailId\":\"2180436300297\",\"itemId\":\"930190839922\",\"skuId\":\"5815648384343\"},\"pageType\":\"taobuy2\"}]"
+              },
+              "method": "POST",
+              "v": "1.0"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Condition_Sale_Pic_Click-buyOneBusiness",
+              "arg2": "conditionalSaleCard",
+              "args": {
+                "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "stdPop.showWeex2",
+            "fields": {
+              "bizId": "buyOne",
+              "content": {
+                "abExperiments": {
+                  "showDetailInV2": "true"
+                },
+                "detail": {
+                  "detailCdnUrl": "https://itemcdn.tmall.com/desc/icoss!0930190839922!14060165495",
+                  "detailPicList": [],
+                  "detailTitle": "宝贝详情"
+                },
+                "footer": {
+                  "arg1": "Page_NewBuy_NewConfirmOrder_Condition_Sale_Pic_collocation-buyOneBusiness",
+                  "args": {
+                    "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%22%2C%22serviceTag%22%3A%22%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22LEVEL0%22%7D"
+                  },
+                  "buyBtnText": "立即购买",
+                  "buyOneItemChecked": "false",
+                  "nativeOrder": {
+                    "broadcastParams": {
+                      "event": "auraEventNotification",
+                      "param": {
+                        "bizCode": "purchase",
+                        "fields": {
+                          "eventKey": "itemClick_0",
+                          "target": "newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1"
+                        },
+                        "type": "routerEvent"
+                      }
+                    }
+                  }
+                },
+                "header": {
+                  "headerPicList": ["//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg", "//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01nDEUH42FkxZQbEYHj_!!2218104308919.jpg", "//img.alicdn.com/bao/uploaded/i3/2218104308919/O1CN01ZbeYB72FkxZQbAnOA_!!2218104308919.jpg", "//img.alicdn.com/bao/uploaded/i1/2218104308919/O1CN01aQnT0P2FkxZQ9JOAu_!!2218104308919.jpg", "//img.alicdn.com/bao/uploaded/i1/2218104308919/O1CN01UXGiLI2FkxZQJnsUU_!!2218104308919.jpg", "//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01VeNays2FkxZQbEU7o_!!2218104308919.jpg"]
+                },
+                "main": {
+                  "detailComment": {
+                    "commentUrl": "https://h5.m.taobao.com/app/rate/www/rate-list/index.html?auctionNumId=930190839922",
+                    "userTrackFieldsMap": {
+                      "commentClick": {
+                        "arg1": "Page_NewConfirmOrder_Condition_Sale_Pic_comment-buyOneBusiness",
+                        "eventId": "2101"
+                      },
+                      "commentExposure": {
+                        "arg1": "Page_NewConfirmOrder_Condition_Sale_Pic_comment-buyOneBusiness",
+                        "eventId": "2201"
+                      },
+                      "commentOpenDuration": {
+                        "arg1": "Page_NewConfirmOrder_Condition_Sale_Pic_comment_open-buyOneBusiness",
+                        "eventId": "2001"
+                      }
+                    }
+                  },
+                  "itemTitle": "木质电动滑行飞机模型",
+                  "serviceTags": [{
+                    "allowDuplicate": "true",
+                    "attributes": [],
+                    "checked": "false",
+                    "disable": "false",
+                    "hidden": "false",
+                    "id": "145067258",
+                    "name": "",
+                    "status": "normal",
+                    "text": "7天无理由退货",
+                    "textBold": "false",
+                    "textColor": "#00A67C",
+                    "textSize": "13"
+                  }, {
+                    "allowDuplicate": "true",
+                    "attributes": [],
+                    "checked": "false",
+                    "disable": "false",
+                    "hidden": "false",
+                    "id": "145067259",
+                    "name": "",
+                    "status": "normal",
+                    "text": "包邮",
+                    "textBold": "false",
+                    "textColor": "#00A67C",
+                    "textSize": "13"
+                  }],
+                  "serviceTagsPic": "https://img.alicdn.com/imgextra/i4/O1CN01w7T6VW1EV60uY4ATc_!!6000000000356-2-tps-28-28.png",
+                  "shopIcon": "https://img.alicdn.com/imgextra/i4/O1CN01cxtHyU27HdA69yrnl_!!6000000007772-2-tps-80-36.png",
+                  "shopTitle": "优可品创",
+                  "skuIcon": "//img.alicdn.com/bao/uploaded/i4/2218104308919/O1CN01qllLlN2FkxZQ0Q6vR_!!2218104308919.jpg",
+                  "skuName": "已选：【1个装】手工diy滑翔机-不含电池;",
+                  "subPrice": {
+                    "bgColor": "#FEEDE5",
+                    "color": "#FF5000",
+                    "prefix": "顺买价￥",
+                    "price": "4",
+                    "pricePoint": ".20"
+                  }
+                },
+                "popUrl": "https://meta.m.taobao.com/app/tb-trade/newbuy-micro-detail/home?wh_weex=true&weex_mode=dom&wx_limit_raster_cache=true"
+              },
+              "popConfig": {
+                "animation": "bottomInOut",
+                "attachMode": "activity",
+                "disableHorizontalPan": "false",
+                "panEnable": "false",
+                "tapEnable": "true"
+              },
+              "popId": "buyOneDetailPop",
+              "scene": "buyItemTieSaleV3",
+              "url": "https://meta.m.taobao.com/app/tb-trade/newbuy-micro-detail/home?wh_weex=true&weex_mode=dom&wx_limit_raster_cache=true"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button_collocation-buyOneBusiness",
+              "arg2": "conditionalSaleCard",
+              "args": {
+                "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "itemChange": [{
+            "type": "adjust",
+            "fields": {
+              "action": "buyOneItemChange"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Condition_Sale_Item_Change-buyOneBusiness",
+              "arg2": "conditionalSaleCard",
+              "args": {
+                "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItemComplete": [{
+            "type": "mtop.requestData",
+            "fields": {
+              "api": "mtop.taobao.trade.track.submit",
+              "data": {
+                "bizCode": "buyone",
+                "trackParams": "[{\"actionType\":\"exposure\",\"exParams\":{\"activityDetailId\":\"2180436300297\",\"itemId\":\"930190839922\",\"skuId\":\"5815648384343\"},\"pageType\":\"taobuy2\"}]"
+              },
+              "method": "POST",
+              "v": "1.0"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button_collocation_whole-buyOneBusiness",
+              "arg2": "conditionalSaleCard",
+              "args": {
+                "buyOneUtAttr": "%7B%22abTestId%22%3A%22%22%2C%22activityDetailId%22%3A2180436300297%2C%22buyOneItemFrom%22%3A%22TPP_ITEM%22%2C%22buyOnePrice%22%3A%224.20%22%2C%22buyerId%22%3A1132584244%2C%22itemId%22%3A930190839922%2C%22originalPrice%22%3A%224.20%22%2C%22pos%22%3A0%2C%22priceTitle%22%3A%22%22%2C%22promotionId%22%3A%22Tmall%24taobaoBuy1-95096619388_2180436300297%22%2C%22relatedItemInfo%22%3A%22828931425108_5558309004213_1639642865%22%2C%22scm%22%3A%221007.43049.458483.0%22%2C%22sellerId%22%3A2218104308919%2C%22sellingPointTag%22%3A%22%E5%B7%B2%E5%94%AE2000%2B%22%2C%22serviceTag%22%3A%227%E5%A4%A9%E6%97%A0%E7%90%86%E7%94%B1%E9%80%80%E8%B4%A7%22%2C%22skuId%22%3A5815648384343%2C%22tppItemQueryType%22%3A%22onlyCross%22%2C%22traceId%22%3A%222147805f17542079583648390e115a%22%2C%22ultronVersion%22%3A%22v3%22%2C%22utLogMap%22%3A%22%257B%2522buy2_real_exposure_cond%2522%253A100%252C%2522pb_drr_score%2522%253A3.7038326263427734E-4%252C%2522hb_fake_pv%2522%253A0%252C%2522hb_promotion_channel%2522%253A%2522taobaoTradeBuildBuy1%2522%252C%2522rec_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522x_ts%2522%253A1754207958541%252C%2522real_exposure_cond%2522%253A99%252C%2522pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522hb_filter_tags%2522%253A%25221%252C4%252C6%2522%252C%2522hb_rt_ipv%2522%253A1%252C%2522pb_cvr%2522%253A0.0015548169612884521%252C%2522hb_sku_id%2522%253A5815648384343%252C%2522pb_model_version_ctr%2522%253A%2522pb_ctr%2522%252C%2522hb_rt_pv%2522%253A4166%252C%2522match_type_list%2522%253A%252249%2522%252C%2522buyOneEvoBucketId%2522%253A%2522%2522%252C%2522hb_promotion_name%2522%253A%2522taobaoBuy1%2522%252C%2522hb_item_type%2522%253A%2522onlyCross%2522%252C%2522pb_drr_cvr%2522%253A0.0%252C%2522real_exposure_duration%2522%253A0%252C%2522x_object_id%2522%253A930190839922%252C%2522ctvr%2522%253A0.0%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522x_exposed%2522%253A%2522ssma-930190839922%2522%252C%2522hb_planid%2522%253A0%252C%2522pb_timestamp%2522%253A1754207958%252C%2522is_single2cross%2522%253A0%252C%2522pb_ori_ctr%2522%253A0.0%252C%2522tpp_buckets%2522%253A%252233049%25230%2523458483%252320%2522%252C%2522cali_ctvr%2522%253A0.0%252C%2522abid%2522%253A458483%252C%2522ori_cvr%2522%253A0.0015548169612884521%252C%2522hb_promotion_toolcode%2522%253A%2522tmallNormalItem%2522%252C%2522match_type%2522%253A%2522dm_cvr%2522%252C%2522un_pvid%2522%253A%25222a4a85a6-7476-4d8d-bff0-5eef9e4cc323%2522%252C%2522pb_rank_score%2522%253A0.0011661127209663391%252C%2522cvr%2522%253A0.0015548169612884521%252C%2522reward%2522%253A0.0%252C%2522pb_ctr%2522%253A0.0%252C%2522x_extend%2522%253A%2522matchtype%253Adm_cvr%2523adCtr%253A0.0%2523triggerItems%253A%2523sts%253A7%2523lts%253A15%2523beMatchScore%253A3.7038326263427734E-4%2523drrCtrScore%253A3.7038326263427734E-4%2523drrCvrScore%253A0.0%2523mind_similar_score%253A0.0%2523oriMatchType%253Adm_cvr%2523rtp_ctr_score%253A0.0%2523rtp_cvr_score%253A0.0015548169612884521%2523rtp_ori_ctr_score%253A0.0%2523rtp_ori_cvr_score%253A0.0015548169612884521%2523rtp_u_score%253A0.0011661127209663391%2523drr_ctr_score%253A3.7038326263427734E-4%2523drr_cvr_score%253A0.0%2523drr_score%253A3.7038326263427734E-4%2523d_itemType%253AonlyCross%2523d_strem_pv%253A4166%2523d_strem_ipv%253A1%2523new_cvr%253A0.0015548169612884521%2523item_type%253AonlyCross%2523detail_id%253A2180436300297%2523cate_id%253A201181401%2523seller_id%253A2218104308919%2523item_id%253A930190839922%2523sku_id%253A5815648384343%2523cali_ctvr%253A0.0%2523ctvr%253A0.0%2523ori_cvr%253A0.0015548169612884521%2523cali_cvr%253A0.0015548169612884521%2523cvr%253A0.0015548169612884521%2523f_score%253A0.0015548169612884521%2522%252C%2522hb_activity_detail_id%2522%253A2180436300297%252C%2522pb_model_version_cvr%2522%253A%2522pv_model_change_odl%2522%252C%2522is_coldstart%2522%253A0%252C%2522pb_fromappid%2522%253A32385%252C%2522bucketid%2522%253A-1%252C%2522cali_cvr%2522%253A0.0015548169612884521%252C%2522change_item_cat_id%2522%253A%255B%255D%252C%2522x_item_ids%2522%253A930190839922%252C%2522pb_drr_ctr%2522%253A3.7038326263427734E-4%257D%22%7D"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "helpIconClick": [{
+            "type": "openUrl",
+            "fields": {
+              "method": "GET",
+              "pageType": "H5",
+              "url": "//pages.tmall.com/wow/a/act/tmall/dailygroup/2433/wupr?wh_pid=daily-232765"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_newtonSingleItemConditionSaleCardV3",
+            "submit": "true",
+            "input": "true"
+          }
+        }
+      },
+      "newtonConditionSaleCardElevator": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "floatBottom",
+          "showOnce": "true",
+          "showType": "hideOnEnter"
+        }
+      },
+      "newtonSingleItemConditionSaleCardElevator_buyOneBusiness_conditionalSaleCard_1": {
+        "type": "dinamicx$buy_v2_foot_elevator$0$generalv2",
+        "fields": {
+          "asyncStatus": "init",
+          "bgColor": "#333333",
+          "darkModeBgColor": "#E6FFFFFF",
+          "darkModeIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01cl5D7B1eVG9O7DCEf_!!6000000003876-54-tps-280-280.apng?getAvatar=1",
+          "icon": "https://gw.alicdn.com/imgextra/i4/O1CN011JGjPM1u66FJZZGGY_!!6000000005987-54-tps-280-280.apng?getAvatar=1",
+          "marginBottom": "126"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "locator"
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        }
+      },
+      "paymentCard": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cornerRadius": "25",
+            "dividerHeght": "9",
+            "marginLeft": "12",
+            "marginRight": "12"
+          }
+        },
+        "cardGroup": "true"
+      },
+      "paymentUsePrimaryAction_AlipayFrontPlanB4Newton": {
+        "type": "dinamicx$buy_v2_payment$0$generalv2",
+        "fields": {
+          "icon": "https://img.alicdn.com/imgextra/i1/O1CN01KmxlL81mUMJGCVmhn_!!6000000004957-2-tps-54-54.png",
+          "showMainLine": "true",
+          "showSecondLine": "false",
+          "state": "unsel",
+          "title": "支付宝"
+        },
+        "events": {
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_AlipayFrontPlanB4Newton",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "submitFromSplitBtn": [{
+            "type": "adjustRules",
+            "fields": {
+              "actionParams": {
+                "isFromSplitBtnSubmit": "true"
+              },
+              "actionType": "props_writeback"
+            }
+          }],
+          "actionOneClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_AlipayFrontPlanB4Newton",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "adjust",
+            "fields": {
+              "action": "PAYMENT_PRIMARY_ACTION"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_paymentUsePrimaryAction",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "hiddenParams": "{\"__compBizCode\":\"AlipayFrontPlanB4Newton\",\"__resultName\":\"paymentUse\",\"__flowCode\":\"GENERAL_BUYER_PLACE_ORDER_REGISTER_SHOPPING_CUSTOM_VIEWS_PAYMENT\",\"optionCode\":\"ALIPAY_BATCH_ESCROW_APP_FOR_TP\",\"__id\":\"1\"}"
+              }
+            },
+            "adjustPolicy": "all",
+            "submitPolicy": "all"
+          },
+          "ut": {
+            "args": {
+              "state": "unsel"
+            },
+            "arg2": null,
+            "autoUt": "true",
+            "arg1": "paymentUsePrimaryAction_AlipayFrontPlanB4Newton"
+          }
+        }
+      },
+      "paymentElevator_AlipayFrontPlanB4Newton": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "floatBottom",
+          "showOnce": "true",
+          "showType": "hideOnEnter"
+        }
+      },
+      "paymentUseElevator_AlipayFrontPlanB4Newton": {
+        "type": "dinamicx$buy_v2_foot_elevator$0$generalv2",
+        "fields": {
+          "asyncStatus": "init",
+          "darkModeIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01cl5D7B1eVG9O7DCEf_!!6000000003876-54-tps-280-280.apng?getAvatar=1",
+          "icon": "https://gw.alicdn.com/imgextra/i4/O1CN011JGjPM1u66FJZZGGY_!!6000000005987-54-tps-280-280.apng?getAvatar=1"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "locator"
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        }
+      },
+      "paymentUsePrimaryAction_Agency4Newton": {
+        "type": "dinamicx$buy_v2_payment$0$generalv2",
+        "fields": {
+          "icon": "https://img.alicdn.com/imgextra/i1/O1CN01F0i2Rl23F6aSc05Fy_!!6000000007225-2-tps-54-54.png",
+          "showMainLine": "true",
+          "showSecondLine": "false",
+          "state": "sel",
+          "subtitle": "找人帮忙付，购物更方便",
+          "subtitleStyle": "desc",
+          "title": "找朋友帮忙付"
+        },
+        "events": {
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Agency4Newton",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "submitFromSplitBtn": [{
+            "type": "adjustRules",
+            "fields": {
+              "actionParams": {
+                "isFromSplitBtnSubmit": "true"
+              },
+              "actionType": "props_writeback"
+            }
+          }],
+          "actionOneClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Agency4Newton",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "adjust",
+            "fields": {
+              "action": "PAYMENT_PRIMARY_ACTION"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_paymentUsePrimaryAction",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "hiddenParams": "{\"__compBizCode\":\"Agency4Newton\",\"__resultName\":\"paymentUse\",\"__flowCode\":\"GENERAL_BUYER_PLACE_ORDER_REGISTER_SHOPPING_CUSTOM_VIEWS_PAYMENT\",\"optionCode\":\"ALIPAY_TAO_AGENCY_APP_FOR_TP\",\"__id\":\"1\"}"
+              }
+            },
+            "adjustPolicy": "all",
+            "submitPolicy": "all"
+          },
+          "ut": {
+            "args": {
+              "state": "sel",
+              "subtitle": "找人帮忙付，购物更方便"
+            },
+            "arg2": null,
+            "autoUt": "true",
+            "arg1": "paymentUsePrimaryAction_Agency4Newton"
+          }
+        }
+      },
+      "paymentElevator_Agency4Newton": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "floatBottom",
+          "showOnce": "true",
+          "showType": "hideOnEnter"
+        }
+      },
+      "paymentUseElevator_Agency4Newton": {
+        "type": "dinamicx$buy_v2_foot_elevator$0$generalv2",
+        "fields": {
+          "asyncStatus": "init",
+          "darkModeIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01cl5D7B1eVG9O7DCEf_!!6000000003876-54-tps-280-280.apng?getAvatar=1",
+          "icon": "https://gw.alicdn.com/imgextra/i4/O1CN011JGjPM1u66FJZZGGY_!!6000000005987-54-tps-280-280.apng?getAvatar=1"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "locator"
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-elevator",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        }
+      },
+      "checkboxAgreemnet": {
+        "type": "layout$card$0$0",
+        "fields": {
+          "style": {
+            "cornerRadius": "25",
+            "dividerHeght": "9",
+            "marginLeft": "12",
+            "marginRight": "12"
+          }
+        },
+        "cardGroup": "true"
+      },
+      "newtonCheckboxAgreement_privacy_protect_privacyCheckbox_1": {
+        "type": "dinamicx$buy_v2_item_sale_agreement$0$generalv2",
+        "fields": {
+          "attachInfo": "",
+          "helpIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01QKhsKS23TkxhwpL7L_!!6000000007257-2-tps-32-32.png",
+          "icon": "https://img.alicdn.com/imgextra/i1/O1CN01EuZ7xH1DaIamKYT04_!!6000000000232-2-tps-66-66.png",
+          "state": "sel",
+          "subtitle": [{
+            "style": {
+              "color": "#999999"
+            },
+            "text": "隐藏收件人真实手机号，保护隐私"
+          }],
+          "title": "号码保护"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_Order_NewConfirmOrder_Button_checkBox_privacy_protect_privacyCheckbox_1",
+              "args": {
+                "itemIds": "828931425108-5558309004213-1639642865-ali.china.taobao.kidtoys",
+                "privacyOperate": "true",
+                "privacyShow": "true",
+                "privacyState": "true",
+                "userId": "1132584244"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "adjust"
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_Order_NewConfirmOrder_Button_checkBox_privacy_protect_privacyCheckbox_1",
+              "args": {
+                "itemIds": "828931425108-5558309004213-1639642865-ali.china.taobao.kidtoys",
+                "privacyOperate": "true",
+                "privacyShow": "true",
+                "privacyState": "true",
+                "userId": "1132584244"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }],
+          "helpIconClick": [{
+            "type": "openUrl",
+            "fields": {
+              "method": "GET",
+              "pageType": "H5",
+              "url": "https://huodong.taobao.com/wow/z/mt/default/phone-privacy-1-0?wh_biz=tm"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_newtonCheckboxAgreement",
+            "submit": "true",
+            "input": "true",
+            "hidden": {
+              "extensionMap": {
+                "hiddenParams": "{\"__compBizCode\":\"privacy_protect\",\"__resultName\":\"privacyCheckbox\",\"__flowCode\":\"GENERAL_BUYER_PLACE_ORDER_REGISTER_CHECKBOX_AGREEMENT\",\"__id\":\"1\"}"
+              }
+            }
+          }
+        }
+      },
+      "optionalAgreementElevator": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "floatBottom",
+          "showOnce": "true",
+          "showType": "hideOnEnter"
+        }
+      },
+      "optionalAgreementCardElevator": {
+        "type": "dinamicx$buy_v2_foot_elevator$0$generalv2",
+        "fields": {
+          "asyncStatus": "init",
+          "darkModeIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01cl5D7B1eVG9O7DCEf_!!6000000003876-54-tps-280-280.apng?getAvatar=1",
+          "icon": "https://gw.alicdn.com/imgextra/i4/O1CN011JGjPM1u66FJZZGGY_!!6000000005987-54-tps-280-280.apng?getAvatar=1"
+        }
+      },
+      "infoScroller": {
+        "type": "dinamicx$buy_v2_common_sliderlayout$0$generalv2"
+      },
+      "commonPostBack": {
+        "features": {
+          "linkage": {
+            "ref": "generalV2_commonPostBack",
+            "input": "true"
+          }
+        }
+      },
+      "bottomMargin": {
+        "type": "dinamicx$buy_v2_separater$0$generalv2",
+        "fields": {
+          "hello": "world"
+        },
+        "position": "body"
+      },
+      "footer": {
+        "type": "layout$sticky$0$0",
+        "fields": {
+          "position": "bottom"
+        },
+        "position": "footer"
+      },
+      "submitOrder": {
+        "position": "footer"
+      },
+      "submit": {
+        "type": "dinamicx$buy_v3_submit_order$0$25",
+        "fields": {
+          "count": "1款，共1件",
+          "countV2": "共1件",
+          "descCss": {
+            "isBold": "false",
+            "isItalic": "false"
+          },
+          "enableElevator": "false",
+          "enableSecondConfirmationPop": "false",
+          "enableShowPromotionDetailStrip": "false",
+          "isShowFamilyPayBtn": "false",
+          "payBtn": {
+            "title": "提交订单"
+          },
+          "price": "￥10.90",
+          "priceTitle": "合计:",
+          "settlementBenefitColor": "#FF6200",
+          "settlementBenefitIcon": "https://img.alicdn.com/imgextra/i3/O1CN01Hi0OCH1use96JiCK2_!!6000000006093-2-tps-48-56.png",
+          "splitReverse": "false",
+          "submitRichText": {
+            "displayType": "1",
+            "mainTitle": [{
+              "content": "立即支付",
+              "type": "text"
+            }, {
+              "content": "￥10.9",
+              "type": "price"
+            }]
+          },
+          "submitSplit": "false",
+          "useSpecialPay": "false"
+        },
+        "events": {
+          "itemClick": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_Confirmorder_submit_new",
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Agency4Newton_agencyPay_agencyPay",
+              "args": {
+                "agencyPay": "1"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "FirstUseThenPay4Newton_xyhf_xyhf",
+              "args": {
+                "allCnt": "1",
+                "ver": "zm_open",
+                "unAvailIds": "828931425108@xyhfSellerTagWhiteList",
+                "viewType": "",
+                "first": "false"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "submit",
+            "fields": {
+              "intervalTime": "1000"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-submit",
+              "args": {
+                "bizCodes": "ali.china.service.general,ali.china.taobao.kidtoys",
+                "itemCount": "1",
+                "itemIds": "828931425108-5558309004213-1639642865-ali.china.taobao.kidtoys",
+                "newTraceId": "215044fa17542079847065938e1531",
+                "pay_btn_unite": "true",
+                "preSaleEnum": "0",
+                "priceDetailSize": "0",
+                "privacyOperate": "true",
+                "privacyShow": "true",
+                "privacyState": "true",
+                "realPay": "1090",
+                "submitSplit": "0",
+                "taoBuyVer": "3",
+                "traceId": "2147805f17542079583648390e115a",
+                "userId": "1132584244"
+              },
+              "eventId": "2101",
+              "page": "Page_Order"
+            }
+          }],
+          "exposureItem": [{
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_Confirmorder_submit_new",
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Agency4Newton_agencyPay_agencyPay",
+              "args": {
+                "agencyPay": "1"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "FirstUseThenPay4Newton_xyhf_xyhf",
+              "args": {
+                "allCnt": "1",
+                "ver": "zm_open",
+                "unAvailIds": "828931425108@xyhfSellerTagWhiteList",
+                "viewType": "",
+                "first": "false"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "GlobalTcsBizCode_globalUtRegister_tcsServiceUt",
+              "args": {
+                "serviceUt": "serviceUt~0~828931425108~5558309004213~7天无理由退货^极速退款"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "ConfirmGlobalUt_ConfirmGlobalUtInfo_confirm_price_info",
+              "args": {
+                "pte": "false",
+                "hi": "false",
+                "rt": "adjust",
+                "pti": "10.90",
+                "atpf": "0.00",
+                "cptv1": "10.00",
+                "cpipids": "{}",
+                "prte": "false",
+                "attf": "0.00",
+                "atsf": "0.00",
+                "adtp": "10.90",
+                "citf": "10.90",
+                "oip": "10.90",
+                "cpiids": "{\"999\":\"1000\"}",
+                "umpLog": "n_p_t_1^1752546186000;NEED_FILTER_PROMOTION^;pur^;",
+                "adtf": "10.90",
+                "ics": "false",
+                "cti": "2147822517542079527685785e1a33",
+                "acdtp": "0.00",
+                "eti": "215044fa17542079847065938e1531",
+                "oft": "FROM_CART_USER",
+                "cpi": "{\"999\":\"10.00\",\"cross_id_78\":\"0.00\"}",
+                "copt": "0.00"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }, {
+            "type": "userTrack",
+            "fields": {
+              "arg1": "Page_NewConfirmOrder_Button-submit",
+              "args": {
+                "bizCodes": "ali.china.service.general,ali.china.taobao.kidtoys",
+                "itemCount": "1",
+                "itemIds": "828931425108-5558309004213-1639642865-ali.china.taobao.kidtoys",
+                "newTraceId": "215044fa17542079847065938e1531",
+                "pay_btn_unite": "true",
+                "preSaleEnum": "0",
+                "priceDetailSize": "0",
+                "privacyOperate": "true",
+                "privacyShow": "true",
+                "privacyState": "true",
+                "realPay": "1090",
+                "submitSplit": "0",
+                "taoBuyVer": "3",
+                "traceId": "2147805f17542079583648390e115a",
+                "userId": "1132584244"
+              },
+              "eventId": "2201",
+              "page": "Page_Order"
+            }
+          }]
+        },
+        "features": {
+          "linkage": {
+            "ref": "generalV2_submit",
+            "submit": "true",
+            "hidden": {
+              "extensionMap": {
+                "hiddenParams": "{\"showPrice\":\"10.90\",\"submitOrderType\":\"UNITY\"}"
+              }
+            }
+          }
+        },
+        "position": "footer"
+      }
+    },
+    "endpoint": {
+      "ultronage": "true",
+      "protocolVersion": "4.0",
+      "contextVersion": "taoBuy2_gc_202507292348296037_332220",
+      "domainCode": "taoBuy2",
+      "page": "generalV2",
+      "traceIds": ["2147805f17542079583648390e115a", "215044fa17542079847065938e1531"],
+      "umfVersions": {
+        "version": "0.1.0"
+      },
+      "params": {
+        "traceId": "2147805f17542079583648390e115a",
+        "originFeatures": "5",
+        "buy2_2.0_stage": "stage_2",
+        "buy2_2.0_profiles": "[\"profile_stage_3\",\"profile_stage_4\",\"newContainer\",\"eticket\"]",
+        "trade_inside_open_from": "default"
+      }
+    },
+    "features": {
+      "eventChain": {
+        "defaultConfig": {
+          "sourceCode": ["buy_v2_pageventchain"],
+          "showloading": "false",
+          "renderType": "renderFirst",
+          "readCurTemplate": "true"
+        },
+        "source": [{
+          "code": "buy_v2_pageventchain",
+          "url": "https://dinamicx.alibabausercontent.com/pub/buy_v2_pageventchain/1680339083256/buy_v2_pageventchain.zip",
+          "version": "4"
+        }]
+      }
+    },
+    "global": {
+      "feature": {
+        "otherParams": {
+          "dataTracks": "[{\"abtest\":\"398848_403021\",\"component\":\"helpBuyForAnother\",\"releaseId\":398848,\"module\":\"helpBuyForAnother\",\"cm\":\"helpBuyForAnother_helpBuyForAnother\",\"experimentId\":116451,\"bucketId\":403021,\"pageName\":[\"Page_ConfirmOrder\"],\"trackConfigs\":\"[{\\\"eventIds\\\":[2001,2101,2201],\\\"pageNames\\\":[\\\"Page_ConfirmOrder\\\"]}]\"},{\"abtest\":\"581306_183609\",\"component\":\"AB_alipay_front\",\"releaseId\":581306,\"module\":\"AB_alipay_front\",\"cm\":\"AB_alipay_front_AB_alipay_front\",\"experimentId\":55434,\"bucketId\":183609,\"pageName\":[\"Page_ConfirmOrder\"],\"trackConfigs\":\"[{\\\"eventIds\\\":[2001,2101,2201],\\\"pageNames\\\":[\\\"Page_ConfirmOrder\\\"]}]\"}]"
+        }
+      },
+      "paymentData": {
+        "selOptions": "age"
+      },
+      "detect": {
+        "shopIds": "[\"108675049\"]",
+        "itemIds": "[\"1000\",\"828931425108\"]"
+      },
+      "params": {
+        "userId": "1132584244",
+        "bizCodes": "ali.china.service.general,ali.china.taobao.kidtoys"
+      },
+      "renderContainer": "native",
+      "taoBuy3": "1"
+    },
+    "hierarchy": {
+      "root": "generalV2",
+      "structure": {
+        "generalV2": ["errorPopup", "actionBarComponent", "addressCard", "shopCard_0a8bae5c33dfadf2aaaa860208d3eb4b", "conditionSaleCard", "paymentCard", "checkboxAgreemnet", "optionalAgreements", "protocols", "commonPostBackCard", "bottomMargin", "footer"],
+        "errorPopup": ["commonErrorPopup", "itemErrorPopup"],
+        "commonErrorPopup": ["commonErrorPopupTips", "commonErrorPopupFooter"],
+        "commonErrorPopupFooter": ["commonErrorActionButtion"],
+        "itemErrorPopup": ["itemErrorPopupHeader", "itemErrorPopupBody", "itemErrorPopupFooter"],
+        "itemErrorPopupHeader": ["ItemErrorTitle"],
+        "itemErrorPopupBody": ["errorItem_0"],
+        "itemErrorPopupFooter": ["itemErrorButton"],
+        "addressCard": ["baseAddress", "addressStickTop", "addressTip"],
+        "baseAddress": ["address", "townRemind"],
+        "addressStickTop": ["addressRemindV2"],
+        "addressTip": ["newHelpBuyAddressTips"],
+        "shopCard_0a8bae5c33dfadf2aaaa860208d3eb4b": ["shopHead_0a8bae5c33dfadf2aaaa860208d3eb4b", "order_0a8bae5c33dfadf2aaaa860208d3eb4b", "orderExt_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "shopHead_0a8bae5c33dfadf2aaaa860208d3eb4b": ["shopTitle_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "order_0a8bae5c33dfadf2aaaa860208d3eb4b": ["orderLine_2fa86a8fb69c7bf6ece7297057ccbb6f", "delivery_0a8bae5c33dfadf2aaaa860208d3eb4b", "returnFreightService_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "orderLine_2fa86a8fb69c7bf6ece7297057ccbb6f": ["item_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "item_2fa86a8fb69c7bf6ece7297057ccbb6f": ["itemInfo_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "itemInfo_2fa86a8fb69c7bf6ece7297057ccbb6f": ["itemServicePopup_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "itemServicePopup_2fa86a8fb69c7bf6ece7297057ccbb6f": ["itemServicePopupHeader_2fa86a8fb69c7bf6ece7297057ccbb6f", "itemServicePopupFooter_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "itemServicePopupHeader_2fa86a8fb69c7bf6ece7297057ccbb6f": ["itemServiceTitle_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "itemServicePopupFooter_2fa86a8fb69c7bf6ece7297057ccbb6f": ["itemServiceButton_2fa86a8fb69c7bf6ece7297057ccbb6f"],
+        "delivery_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServiceV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryServiceV2_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServicePopupV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryServicePopupV2_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServicePopupHeadV2_0a8bae5c33dfadf2aaaa860208d3eb4b", "deliveryServiceBodyV2_0a8bae5c33dfadf2aaaa860208d3eb4b", "deliveryServicePopupFooterV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryServicePopupHeadV2_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServicePopupTitleV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryServiceBodyV2_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryMethodSelect_0a8bae5c33dfadf2aaaa860208d3eb4b", "deliveryTimeSelect_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryMethodSelect_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryMethodHeader_0a8bae5c33dfadf2aaaa860208d3eb4b", "deliveryMethodOptionsV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryTimeSelect_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServiceShipDetailTtitleV2_0a8bae5c33dfadf2aaaa860208d3eb4b", "deliveryServiceShipDetailV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "deliveryServicePopupFooterV2_0a8bae5c33dfadf2aaaa860208d3eb4b": ["deliveryServiceButtomV2_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "returnFreightService_0a8bae5c33dfadf2aaaa860208d3eb4b": ["freightService_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "freightService_0a8bae5c33dfadf2aaaa860208d3eb4b": ["freightServicePop_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "freightServicePop_0a8bae5c33dfadf2aaaa860208d3eb4b": ["freightServicePopHeader_0a8bae5c33dfadf2aaaa860208d3eb4b", "freightServicePopBody_0a8bae5c33dfadf2aaaa860208d3eb4b", "freightServicePopFooter_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "freightServicePopHeader_0a8bae5c33dfadf2aaaa860208d3eb4b": ["freightServicePopHeaderTitle_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "freightServicePopBody_0a8bae5c33dfadf2aaaa860208d3eb4b": ["sellerFreightServiceVO_0a8bae5c33dfadf2aaaa860208d3eb4b_seller", "FreightServicetotalSupply_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "freightServicePopFooter_0a8bae5c33dfadf2aaaa860208d3eb4b": ["freightServicePopButton_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "orderExt_0a8bae5c33dfadf2aaaa860208d3eb4b": ["orderRemarks_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "orderRemarks_0a8bae5c33dfadf2aaaa860208d3eb4b": ["orderRemark_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "orderRemark_0a8bae5c33dfadf2aaaa860208d3eb4b": ["memRemarkPopWindow_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "memRemarkPopWindow_0a8bae5c33dfadf2aaaa860208d3eb4b": ["memoPopupHeader_0a8bae5c33dfadf2aaaa860208d3eb4b", "memoPopupBody_0a8bae5c33dfadf2aaaa860208d3eb4b", "memoPopupFooter_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "memoPopupHeader_0a8bae5c33dfadf2aaaa860208d3eb4b": ["memoTitle_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "memoPopupBody_0a8bae5c33dfadf2aaaa860208d3eb4b": ["memo_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "memoPopupFooter_0a8bae5c33dfadf2aaaa860208d3eb4b": ["memoButton_0a8bae5c33dfadf2aaaa860208d3eb4b"],
+        "conditionSaleCard": ["newtonConditionSaleCard"],
+        "newtonConditionSaleCard": ["newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1", "newtonConditionSaleCardElevator"],
+        "newtonConditionSaleCardElevator": ["newtonSingleItemConditionSaleCardElevator_buyOneBusiness_conditionalSaleCard_1"],
+        "paymentCard": ["payment_AlipayFrontPlanB4Newton", "payment_Agency4Newton"],
+        "payment_AlipayFrontPlanB4Newton": ["paymentUse_AlipayFrontPlanB4Newton"],
+        "paymentUse_AlipayFrontPlanB4Newton": ["paymentUsePrimaryAction_AlipayFrontPlanB4Newton", "paymentElevator_AlipayFrontPlanB4Newton"],
+        "paymentElevator_AlipayFrontPlanB4Newton": ["paymentUseElevator_AlipayFrontPlanB4Newton"],
+        "payment_Agency4Newton": ["paymentUse_Agency4Newton"],
+        "paymentUse_Agency4Newton": ["paymentUsePrimaryAction_Agency4Newton", "paymentElevator_Agency4Newton"],
+        "paymentElevator_Agency4Newton": ["paymentUseElevator_Agency4Newton"],
+        "checkboxAgreemnet": ["newtonCheckboxAgreements"],
+        "newtonCheckboxAgreements": ["newtonCheckboxAgreement_privacy_protect_privacyCheckbox_1"],
+        "optionalAgreements": ["optionalAgreementElevator"],
+        "optionalAgreementElevator": ["optionalAgreementCardElevator"],
+        "protocols": ["infoScrollers"],
+        "infoScrollers": ["infoScroller"],
+        "commonPostBackCard": ["commonPostBack"],
+        "footer": ["submitOrder"],
+        "submitOrder": ["submit"]
+      }
+    },
+    "linkage": {
+      "common": {
+        "queryParams": "^^$$Z51527077c9cd409a5d42ca766a29d733f|null|taoBuy2_gc_202507292348296037_332220|generalV2|null{$_$}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",
+        "submitParams": "^^$$Z511f52203d328fd067f1ecbbaa8fcd8a5|null|taoBuy2_gc_202507292348296037_332220|generalV2|null{$_$}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",
+        "validateParams": "^^$$763717121137cecf95b81add93d83fb5{$_$}H4sIAAAAAAAAAIWRzU4CMRSF36Vr0swMv7KbPwwJIQQU44pcOheY0GknbYkiIXFvXLr2NUh8HYyv4R2Jysa4a7/cnnN67o4tDBR4p816BHSy/aKUrLtjpQS30Ka42pZY3YUEa4c0yrpM6IKDzOcwB+4MZMiFzFE5XugMJbd6YwTy0ZnCNGA1pk6vb/rjdJBOJrP6zCOqTZYrIM9gX2MlLPEvRwd6DpqTealV5ZZtSTEXvEAHZ7gakHjPo+vbgI++BU/aFH6JCg351ViGVhD4eHs9Hh6Ph6f35xeiBZg1OuK/iS/TYToOBwR+wjaalFZqAbIq5GE1i4eMyMaiCa3Nl+r/zuwKDGa8NGjpN+ByrXhZ7YAn4GBKBWdfKzl1h5jFKxTrmCpm3QVIizWGSpht6SbO5GpJOfxGXPfbjU7qpVGStHpB0gq9Tvsi9JJe2wujtOX7QdIL/FYYNpNexPb7T3pma3EBAgAA",
+        "compress": "true"
+      },
+      "signature": "c0f5793449fe937f8cfa5b53bdfa6f01",
+      "request": ["address", "commonPostBack", "deliveryServiceV2_0a8bae5c33dfadf2aaaa860208d3eb4b", "itemInfo_2fa86a8fb69c7bf6ece7297057ccbb6f", "memo_0a8bae5c33dfadf2aaaa860208d3eb4b", "newHelpBuyAddressTips", "newtonCheckboxAgreement_privacy_protect_privacyCheckbox_1", "newtonSingleItemConditionSaleCard_buyOneBusiness_conditionalSaleCard_1", "paymentUsePrimaryAction_Agency4Newton", "paymentUsePrimaryAction_AlipayFrontPlanB4Newton", "townRemind"],
+      "features": {
+        "simplifyRules": {
+          "linkage": {
+            "features": {
+              "ignore": "true"
+            }
+          }
+        }
+      }
+    },
+    "reload": "true"
+  },
+  "ret": ["SUCCESS::调用成功"],
+  "v": "6.0"
+}
